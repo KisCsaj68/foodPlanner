@@ -27,4 +27,12 @@ public class Food {
 		return "Food [name: " + name + ", components: " + components + ", portion: " + portion + "]";
 	}
 
+	public double calculateKcal() {
+		double result = 0.0;
+		for (RecipeComponent comp : components) {
+			result += comp.scaleIngredientKcal();
+		}
+		return result;
+	}
+
 }

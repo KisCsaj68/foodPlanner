@@ -1,5 +1,9 @@
 package models;
-
+/**
+ * This class has base unit of measure 100g, including liquids. 
+ * @author zsolnaiviki
+ *
+ */
 public class Ingredient {
 	private final String name;
 	private final int kcal;
