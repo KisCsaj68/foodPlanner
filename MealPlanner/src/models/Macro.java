@@ -28,7 +28,14 @@ public class Macro {
 		double fat = other.getFat() + this.fat;
 		double carb = other.getCarboHydrate() + this.carboHydrate;
 		return new Macro(protein, carb, fat);
+	}
 
+	public Macro scale(int amount) {
+		double prot = this.protein * amount / 100.0;
+		double carb = this.carboHydrate * amount / 100.0;
+		double fatt = this.fat * amount / 100.0;
+
+		return new Macro(prot, carb, fatt);
 	}
 
 	@Override
