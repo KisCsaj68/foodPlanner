@@ -32,5 +32,4 @@ public class Ingredient {
 	public String toString() {
 		return "Ingredient [name: " + name + ", kcal: " + kcal + ", macro: " + macro + "]";
 	}
-
 }

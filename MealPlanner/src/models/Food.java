@@ -40,9 +40,12 @@ public class Food {
 		return result;
 	}
 
+	public List<RecipeComponent> getComponents() {
+		return this.components;
+	}
+
 	@Override
 	public String toString() {
 		return "Food: " + name + ", Kcal: " + calculateKcal() + ", Macro: " + calculateMacro() + "]";
 	}
-
 }

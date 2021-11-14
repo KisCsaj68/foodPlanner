@@ -25,7 +25,4 @@ public class RecipeComponent {
 		double result = ingredient.getKcal() * this.amount / 100 ;
 		return result;
 	}
-	
-	
-
 }

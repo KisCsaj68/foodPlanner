@@ -19,6 +19,7 @@ public class DailyMenu {
 		return "DailyMenu: [ " + courses + " ]";
 	}
 	
-	
-
+	public List<Food> getCourses() {
+		return this.courses;
+	}
 }
