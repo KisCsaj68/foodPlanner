@@ -23,7 +23,7 @@ public class Macro {
 		return fat;
 	}
 
-	public Macro sumMacro(Macro other) {
+	public Macro sum(Macro other) {
 		double protein = other.getProtein() + this.protein;
 		double fat = other.getFat() + this.fat;
 		double carb = other.getCarboHydrate() + this.carboHydrate;
@@ -40,7 +40,7 @@ public class Macro {
 
 	@Override
 	public String toString() {
-		return "Macro [protein: " + protein + ", carboHydrate: " + carboHydrate + ", fat: " + fat + "]";
+		return "protein: " + protein + ", carboHydrate: " + carboHydrate + ", fat: " + fat + "]";
 	}
 
 }

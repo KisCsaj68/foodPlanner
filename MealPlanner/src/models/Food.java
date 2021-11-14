@@ -6,25 +6,21 @@ import java.util.List;
 public class Food {
 	private String name;
 	private List<RecipeComponent> components;
-	private int portion;
+	private CourseType type;
 
-	public Food(String name) {
+	public Food(String name, CourseType type) {
 		this.name = name;
 		this.components = new ArrayList<>();
-		this.portion = 1;
+		this.type = type;
+
 	}
 
 	public void addComponent(RecipeComponent componentToAdd) {
 		components.add(componentToAdd);
 	}
 
-	public void setPortion(int portion) {
-		this.portion = portion;
-	}
-
-	@Override
-	public String toString() {
-		return "Food [name: " + name + ", components: " + components + ", portion: " + portion + "]";
+	public CourseType getCourseType() {
+		return this.type;
 	}
 
 	public double calculateKcal() {
@@ -33,6 +29,20 @@ public class Food {
 			result += comp.scaleIngredientKcal();
 		}
 		return result;
+	}
+
+	public Macro calculateMacro() {
+		Macro result = new Macro(0.0, 0.0, 0.0);
+		for (RecipeComponent comp : components) {
+			Macro scaledMacro = comp.getIngredient().getMacro().scale(comp.getAmount());
+			result = result.sum(scaledMacro);
+		}
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Food: " + name + ", Kcal: " + calculateKcal() + ", Macro: " + calculateMacro() + "]";
 	}
 
 }
